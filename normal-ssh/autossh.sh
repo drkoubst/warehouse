@@ -7,7 +7,7 @@ echo "sudo mkdir -p -m 755 ${authdir} done"
 fi
 
 #下载公钥文件
-wget -P /root/.ssh https://cdn.jsdelivr.net/gh/drkoubst/warehouse/authorized_keys
+wget -P --no-check-certificate /root/.ssh https://cdn.jsdelivr.net/gh/drkoubst/warehouse/docker-ssh/authorized_keys
 k1=`grep 'PasswordAuthentication' /etc/ssh/sshd_config`
 if [ ! $k1 ];then
 echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
